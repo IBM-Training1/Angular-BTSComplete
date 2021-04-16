@@ -1,0 +1,141 @@
+<p>create-bug works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="createBug.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>Create Bug</title>
+</head>
+
+<body>
+	<header class="header">
+		<nav class="navbar navbar-style">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#menu">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a href=""><img class="logo" src="logo.png"></a>
+				</div>
+				<div class="collapse navbar-collapse" id="menu">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="aboutUs.html">About Us</a></li>
+						<li><a href="contactUs.html">Help</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</nav>
+	</header>
+	<div class="container" id="create">
+	<form id="createBug">
+		<p class="para1">Create Bug</p>
+		<table class="table">
+			<tr>
+				<td>Name<span style="color:red">*</span></td>
+				<td><input type="text" id="name" required></td>
+				<td>ProjectId<span style="color:red">*</span></td>
+				<td><input type="text" id="project" required></td>
+
+			</tr>
+			<tr>
+				<td>Module<span style="color:red">*</span></td>
+				<td><input type="text" id="module" required></td>
+				<td>Type<span style="color:red">*</span></td>
+				<td><select id="type" required>
+						<option value="" disabled selected>Choose value</option>
+						<option value="RUNTIME">RUNTIME</option>
+						<option value="COMPILETIME">COMPILETIME</option>
+						<option value="ARITHMETIC">ARITHMETIC</option>
+						<option value="LOGICAL">LOGICAL</option>
+						<option value="SYNTAX">SYNTAX</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Product<span style="color:red">*</span></td>
+				<td><input type="text" id="product" required></td>
+				<td>Status<span style="color:red">*</span></td>
+				<td><select name="Status" id="Status" required>
+						<option value="" disabled selected>Choose value</option>
+						<option value="NEW">NEW</option>
+						<option value="ASSIGNED">ASSIGNED</option>
+						<option value="OPEN">OPEN</option>
+						<option value="FIXED">FIXED</option>
+						<option value="PENDING_REQUEST">PENDING_RETEST</option>
+						<option value="RETEST">RETEST</option>
+						<option value="REOPEN">REOPEN</option>
+						<option value="VERIFIED">VERIFIED</option>
+						<Option value="CLOSED">CLOSED</Option>
+						<option value="DEFERRED">DEFERRED</option>
+						<option value="DUPLICATE">DUPLICATE</option>
+						<option value="NEED_MORE_INFO">NEED_MORE_INFO</option>
+						<option value="WONT_FIX">WONT_FIX</option>
+						<option value="REJECTED">REJECTED</option>
+						<option value="NOT_A_BUG">NOT_A_BUG</option>
+				</select></td>
+
+			</tr>
+			<tr>
+				<td>Synopsis<span style="color:red">*</span></td>
+				<td><textarea minlength="5" maxlength="50" class="form-control"
+                    placeholder="Please type your comment in less than 50 characters" id="synopsis" required
+                    ></textarea></td>
+				<td>Severity<span style="color:red">*</span></td>
+				<td><select id="severity" required>
+						<option value="" disabled selected>Choose value</option>
+						<option value="SEVERE">SEVERE</option>
+						<option value="MILD">MILD</option>
+						<option value="LOW">LOW</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Description<span style="color:red">*</span></td>
+				<td><textarea minlength="5" maxlength="100" class="form-control"
+                    placeholder="Please type your comment in less than 100 characters" required id="description"
+                    ></textarea></td>
+				<td>Priority<span style="color:red">*</span></td>
+				<td><select name="Priority" id="Priority" required>
+						<option value="" disabled selected>Choose value</option>
+						<option value="HIGH">HIGH</option>
+						<option value="MEDIUM">MEDIUM</option>
+						<option value="LOW">LOW</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Build Version<span style="color:red">*</span></td>
+				<td><input id="submit"></td>
+				<td>Estimated Date<span style="color:red">*</span></td>
+				<td><input type="date" id="etaid"></td>
+			</tr>
+		</table>
+		<table width="100%">
+		<tr>
+		<td></td>
+		<td><a class="btn btn-first" onclick="saveBug()" href="#">Create Bug</a></td>
+		<td></td>
+		</tr>
+		</table>
+
+</form>
+<br>
+            <footer class="page-footer font-small blue"  id="footer">
+
+        <div class="footer-copyright text-center py-3"><small>© 2021 Copyright ServerMonks</small>
+
+        </div>
+
+    </footer>
+	</div>
+
+</body>
