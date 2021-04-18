@@ -7,8 +7,8 @@ import { Bug } from './Bug';
 })
 export class BugService {
   constructor(private http: HttpClient) { }
-  save(bug: Bug) {
-    return this.http.post('http://localhost:8080/bug',bug, {
+  saveBug(bug: Bug) {
+    return this.http.post('http://localhost:8081/bug',bug, {
       headers: { "content-type": 'application/json' }
     });
   }

@@ -1,11 +1,10 @@
-<p>create-bug works!</p>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="createBug.css">
+<link rel="stylesheet" type="text/css" href="create-bug.component.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script
@@ -25,7 +24,7 @@
 						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a href=""><img class="logo" src="logo.png"></a>
+					<a href=""><img class="logo" src="assets/img/logo.png"></a>
 				</div>
 				<div class="collapse navbar-collapse" id="menu">
 					<ul class="nav navbar-nav navbar-right">
@@ -44,16 +43,16 @@
 		<table class="table">
 			<tr>
 				<td>Name<span style="color:red">*</span></td>
-				<td><input type="text" id="name" required></td>
+				<td><input type="text" id="name"  [(ngModel)]='bug.name' name='name' required></td>
 				<td>ProjectId<span style="color:red">*</span></td>
-				<td><input type="text" id="project" required></td>
+				<td><input type="text" id="project"  [(ngModel)]='bug.projectId' name='projectId' required></td>
 
 			</tr>
 			<tr>
 				<td>Module<span style="color:red">*</span></td>
-				<td><input type="text" id="module" required></td>
+				<td><input type="text" id="module"  [(ngModel)]='bug.module' name='module' required></td>
 				<td>Type<span style="color:red">*</span></td>
-				<td><select id="type" required>
+				<td><select id="type"  [(ngModel)]='bug.type' name='type' required>
 						<option value="" disabled selected>Choose value</option>
 						<option value="RUNTIME">RUNTIME</option>
 						<option value="COMPILETIME">COMPILETIME</option>
@@ -64,9 +63,9 @@
 			</tr>
 			<tr>
 				<td>Product<span style="color:red">*</span></td>
-				<td><input type="text" id="product" required></td>
+				<td><input type="text" id="product"  [(ngModel)]='bug.product' name='product' required></td>
 				<td>Status<span style="color:red">*</span></td>
-				<td><select name="Status" id="Status" required>
+				<td><select  id="Status"  [(ngModel)]='bug.status' name='status' required>
 						<option value="" disabled selected>Choose value</option>
 						<option value="NEW">NEW</option>
 						<option value="ASSIGNED">ASSIGNED</option>
@@ -89,10 +88,10 @@
 			<tr>
 				<td>Synopsis<span style="color:red">*</span></td>
 				<td><textarea minlength="5" maxlength="50" class="form-control"
-                    placeholder="Please type your comment in less than 50 characters" id="synopsis" required
+                    placeholder="Please type your comment in less than 50 characters" id="synopsis"  [(ngModel)]='bug.synopsis' name='synopsis' required
                     ></textarea></td>
 				<td>Severity<span style="color:red">*</span></td>
-				<td><select id="severity" required>
+				<td><select id="severity"  [(ngModel)]='bug.severity' name='severity' required>
 						<option value="" disabled selected>Choose value</option>
 						<option value="SEVERE">SEVERE</option>
 						<option value="MILD">MILD</option>
@@ -102,10 +101,10 @@
 			<tr>
 				<td>Description<span style="color:red">*</span></td>
 				<td><textarea minlength="5" maxlength="100" class="form-control"
-                    placeholder="Please type your comment in less than 100 characters" required id="description"
+                    placeholder="Please type your comment in less than 100 characters" required   [(ngModel)]='bug.description' name='description' id="description"
                     ></textarea></td>
 				<td>Priority<span style="color:red">*</span></td>
-				<td><select name="Priority" id="Priority" required>
+				<td><select name="Priority"   [(ngModel)]='bug.priority' name='priority'  id="Priority"  required>
 						<option value="" disabled selected>Choose value</option>
 						<option value="HIGH">HIGH</option>
 						<option value="MEDIUM">MEDIUM</option>
@@ -114,15 +113,15 @@
 			</tr>
 			<tr>
 				<td>Build Version<span style="color:red">*</span></td>
-				<td><input id="submit"></td>
+				<td><input id="submit"  [(ngModel)]='bug.buildVersion' name='buildVersion'></td>
 				<td>Estimated Date<span style="color:red">*</span></td>
-				<td><input type="date" id="etaid"></td>
+				<td><input type="date"  [(ngModel)]='bug.eta' name='eta' id="etaid"></td>
 			</tr>
 		</table>
 		<table width="100%">
 		<tr>
 		<td></td>
-		<td><a class="btn btn-first" onclick="saveBug()" href="#">Create Bug</a></td>
+		<td><a class="btn btn-first" (click)='saveBug()' href="#">Create Bug</a></td>
 		<td></td>
 		</tr>
 		</table>

@@ -7,15 +7,15 @@ import { BugService } from '../bug.service';
   styleUrls: ['./create-bug.component.css']
 })
 export class CreateBugComponent implements OnInit {
-  title:string = 'Userform';
+  title:string = 'createBug';
   bug:Bug=new Bug(); //model -stores all form data
   bugArray:Bug[]=[];
   constructor(private bugService:BugService) { }
-  save(){
-    const promise = this.bugService.save(this.bug);
+  saveBug(){
+    const promise = this.bugService.saveBug(this.bug);
     promise.subscribe(response=> {
       console.log(response);
-      alert('user added..')
+      alert('bug added..')
       this.bugArray.push(Object.assign({}, this.bug));
     },
     error=> {
