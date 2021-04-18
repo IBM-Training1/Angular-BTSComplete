@@ -6,135 +6,186 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="create-bug.component.css">
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<title>Create Bug</title>
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
 </head>
 
 <body>
-	<header class="header">
-		<nav class="navbar navbar-style">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse"
-						data-target="#menu">
-						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-					<a href=""><img class="logo" src="assets/img/logo.png"></a>
+<header>
+	<nav class="navbar navbar-expand-md  bg-dark navbar-dark">
+		<div class="container">
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#menu">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<a href=""><img class="logo" src="assets/img/logo.png"></a>
+		</div>
+		<div class="collapse navbar-collapse" id="menu">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+				<li class="nav-item" ><a class="nav-link" href="contatUs.html">Help</a></li>
+				<li class="nav-item"><a class="nav-link" href="aboutUs.html">AboutUs</a></li>
+
+			</ul>
+		</div>
+
+	</nav>
+</header>
+	<form id="createBug" class="jumbotron" style="padding-top: 34px">
+		<p class="para1">Create Bug</p>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label class="control-label col-sm-3  col-md-offset-4" for="Name">Name<span style="color:red">*</span></label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="name"
+								name="name" [(ngModel)]='bug.name' required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-3  col-md-offset-4" for="pwd">Priority <span style="color:red">*</span></label>
+						<div class="col-sm-9">
+							<select name="priority" [(ngModel)]='bug.priority' class="form-control" id="Priority">
+							<option value="" disabled selected>Choose value</option>
+								<option value="LOW">LOW</option>
+								<option value="MEDIUM">MEDIUM</option>
+								<option value="HIGH">HIGH</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-3  col-md-offset-4 " for="pwd">Type <span style="color:red">*</span></label>
+						<div class="col-sm-9">
+							<select name="type" [(ngModel)]='bug.type' class="form-control" id="type" required>
+								<option value="" disabled selected>Choose value</option>
+								<option value="RUNTIME">RUNTIME</option>
+								<option value="COMPILETIME">COMPILETIME</option>
+								<option value="ARITHMETIC">ARITHMETIC</option>
+								<option value="LOGICAL">LOGICAL</option>
+								<option value="SYNTAX">SYNTAX</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-10  col-md-offset-4 " for="pwd">Estimated
+							Date<span style="color:red">*</span>
+						</label>
+						<div class="col-sm-9">
+							<input id="etaid" type="date" [(ngModel)]='bug.eta' name='etz' class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-3 col-md-offset-4" for="pwd">Module<span style="color:red">*</span></label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="module" [(ngModel)]='bug.module'
+								name="module" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-10 col-md-offset-4" for="pwd">buildVersion <span style="color:red">*</span></label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="submit" [(ngModel)]='bug.buildVersion'
+								name="buildVersion">
+						</div>
+					</div>
+
 				</div>
-				<div class="collapse navbar-collapse" id="menu">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="aboutUs.html">About Us</a></li>
-						<li><a href="contactUs.html">Help</a></li>
-					</ul>
+				<div class="col">
+					<div class="form-group">
+						<label class="control-label col-sm-3 col-md-offset-2" for="pwd">Status <span style="color:red">*</span></label>
+						<div class="col-sm-9">
+							<select name="status" class="form-control" [(ngModel)]='bug.status' id="Status">
+								<option value="" disabled selected>Choose value</option>
+								<option value="NEW">NEW</option>
+								<option value="ASSIGNED">ASSIGNED</option>
+								<option value="OPEN">OPEN</option>
+								<option value="FIXED">FIXED</option>
+								<option value="PENDING_REQUEST">PENDING_RETEST</option>
+								<option value="RETEST">RETEST</option>
+								<option value="REOPEN">REOPEN</option>
+								<option value="VERIFIED">VERIFIED</option>
+								<Option value="CLOSED">CLOSED</Option>
+								<option value="DEFERRED">DEFERRED</option>
+								<option value="DUPLICATE">DUPLICATE</option>
+								<option value="NEED_MORE_INFO">NEED_MORE_INFO</option>
+								<option value="WONT_FIX">WONT_FIX</option>
+								<option value="REJECTED">REJECTED</option>
+								<option value="NOT_A_BUG">NOT_A_BUG</option>
+							</select>
+						</div>
+					</div>
+					<div class="col">
+						<div class="form-group">
+							<label class="control-label col-sm-3 col-md-offset-2" for="pwd">Severity <span style="color:red">*</span></label>
+							<div class="col-sm-9">
+								<select name="severity" class="form-control" id="severity" [(ngModel)]='bug.severity'>
+								<option value="" disabled selected>Choose value</option>
+									<option value="LOW">LOW</option>
+									<option value="MILD">MILD</option>
+									<option value="SEVERE">SEVERE</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3 col-md-offset-2" for="pwd">Project
+								Id<span style="color:red">*</span>
+							</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="project" [(ngModel)]='bug.projectId'
+									name="projectId" required>
+							</div>
+
+							<div class="form-group">
+								<label class="control-label col-sm-3 col-md-offset-2" for="pwd">Synopsis<span style="color:red">*</span></label>
+								<div class="col-sm-9">
+									<textarea minlength="5" maxlength="50" class="form-control"
+                    placeholder="Please type your comment in less than 50 characters" id="synopsis"  [(ngModel)]='bug.synopsis' name="synopsis" required
+                    rows="2"></textarea>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-3 col-md-offset-2" for="pwd">Product<span style="color:red">*</span></label>
+								<div class="col-sm-9">
+									<input type="text" class="form-control" id="product" [(ngModel)]='bug.product'
+										 name="product" required>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-3 col-md-offset-4" for="pwd">Description<span style="color:red">*</span></label>
+								<div class="col-sm-9">
+									<textarea minlength="5" maxlength="100" class="form-control"
+                    placeholder="Please type your comment in less than 100 characters" id="description" [(ngModel)]='bug.description' name="description" required
+                    rows="2"></textarea>
+								</div>
+							</div>
+
+						</div>
+					</div>
 				</div>
 			</div>
+		</div>
+		<br>
+		<button (click)="saveBug()" type="Submit"
+			class="btn btn-first" >Create Bug</button>
+	</form>
 
-		</nav>
-	</header>
-	<div class="container" id="create">
-	<form id="createBug">
-		<p class="para1">Create Bug</p>
-		<table class="table">
-			<tr>
-				<td>Name<span style="color:red">*</span></td>
-				<td><input type="text" id="name"  [(ngModel)]='bug.name' name='name' required></td>
-				<td>ProjectId<span style="color:red">*</span></td>
-				<td><input type="text" id="project"  [(ngModel)]='bug.projectId' name='projectId' required></td>
+	<!-- Footer -->
+	<div>
+		<footer class="page-footer font-small blue">
 
-			</tr>
-			<tr>
-				<td>Module<span style="color:red">*</span></td>
-				<td><input type="text" id="module"  [(ngModel)]='bug.module' name='module' required></td>
-				<td>Type<span style="color:red">*</span></td>
-				<td><select id="type"  [(ngModel)]='bug.type' name='type' required>
-						<option value="" disabled selected>Choose value</option>
-						<option value="RUNTIME">RUNTIME</option>
-						<option value="COMPILETIME">COMPILETIME</option>
-						<option value="ARITHMETIC">ARITHMETIC</option>
-						<option value="LOGICAL">LOGICAL</option>
-						<option value="SYNTAX">SYNTAX</option>
-				</select></td>
-			</tr>
-			<tr>
-				<td>Product<span style="color:red">*</span></td>
-				<td><input type="text" id="product"  [(ngModel)]='bug.product' name='product' required></td>
-				<td>Status<span style="color:red">*</span></td>
-				<td><select  id="Status"  [(ngModel)]='bug.status' name='status' required>
-						<option value="" disabled selected>Choose value</option>
-						<option value="NEW">NEW</option>
-						<option value="ASSIGNED">ASSIGNED</option>
-						<option value="OPEN">OPEN</option>
-						<option value="FIXED">FIXED</option>
-						<option value="PENDING_REQUEST">PENDING_RETEST</option>
-						<option value="RETEST">RETEST</option>
-						<option value="REOPEN">REOPEN</option>
-						<option value="VERIFIED">VERIFIED</option>
-						<Option value="CLOSED">CLOSED</Option>
-						<option value="DEFERRED">DEFERRED</option>
-						<option value="DUPLICATE">DUPLICATE</option>
-						<option value="NEED_MORE_INFO">NEED_MORE_INFO</option>
-						<option value="WONT_FIX">WONT_FIX</option>
-						<option value="REJECTED">REJECTED</option>
-						<option value="NOT_A_BUG">NOT_A_BUG</option>
-				</select></td>
-
-			</tr>
-			<tr>
-				<td>Synopsis<span style="color:red">*</span></td>
-				<td><textarea minlength="5" maxlength="50" class="form-control"
-                    placeholder="Please type your comment in less than 50 characters" id="synopsis"  [(ngModel)]='bug.synopsis' name='synopsis' required
-                    ></textarea></td>
-				<td>Severity<span style="color:red">*</span></td>
-				<td><select id="severity"  [(ngModel)]='bug.severity' name='severity' required>
-						<option value="" disabled selected>Choose value</option>
-						<option value="SEVERE">SEVERE</option>
-						<option value="MILD">MILD</option>
-						<option value="LOW">LOW</option>
-				</select></td>
-			</tr>
-			<tr>
-				<td>Description<span style="color:red">*</span></td>
-				<td><textarea minlength="5" maxlength="100" class="form-control"
-                    placeholder="Please type your comment in less than 100 characters" required   [(ngModel)]='bug.description' name='description' id="description"
-                    ></textarea></td>
-				<td>Priority<span style="color:red">*</span></td>
-				<td><select name="Priority"   [(ngModel)]='bug.priority' name='priority'  id="Priority"  required>
-						<option value="" disabled selected>Choose value</option>
-						<option value="HIGH">HIGH</option>
-						<option value="MEDIUM">MEDIUM</option>
-						<option value="LOW">LOW</option>
-				</select></td>
-			</tr>
-			<tr>
-				<td>Build Version<span style="color:red">*</span></td>
-				<td><input id="submit"  [(ngModel)]='bug.buildVersion' name='buildVersion'></td>
-				<td>Estimated Date<span style="color:red">*</span></td>
-				<td><input type="date"  [(ngModel)]='bug.eta' name='eta' id="etaid"></td>
-			</tr>
-		</table>
-		<table width="100%">
-		<tr>
-		<td></td>
-		<td><a class="btn btn-first" (click)='saveBug()' href="#">Create Bug</a></td>
-		<td></td>
-		</tr>
-		</table>
-
-</form>
-<br>
-            <footer class="page-footer font-small blue"  id="footer">
-
-        <div class="footer-copyright text-center py-3"><small>© 2021 Copyright ServerMonks</small>
-
-        </div>
-
-    </footer>
+			<div class="col-lg-12 col-md-12 text-center">
+				<div class="footer-copyright text-center py-3">
+					© 2021 Copyright: <a href="http://localhost:8081/index.html">ServerMonks</a>
+				</div>
+			</div>
+		</footer>
 	</div>
 
 </body>
