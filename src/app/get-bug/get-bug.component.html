@@ -57,7 +57,9 @@
 				     style="border: 2px solid #000000; margin-top: 50px ">
 				      <thead style="background-color:grey; color:white">
 					       <td scope="col" style="border: 2px solid #000000;">Name</td>
-					       <td scope="col" style="border: 2px solid #000000;">Status <input id="Status" placeholder="" [(ngModel)]='bug.status' name="status" required><button (click)='getBugbyStatus(bug.status)'>Search</button></td>
+                 <td scope="col" style="border: 2px solid #000000;">Status <input id="Status"
+                  placeholder="" [(ngModel)]='bug.status' name="status" required>
+                  <button (click)='getBugbyStatus(bug.status)'>Search</button></td>
 					      <td scope="col" style="border: 2px solid #000000;">Priority</td>
 					<td scope="col" style="border: 2px solid #000000;">Type</td>
 					<td scope="col" style="border: 2px solid #000000;">BuildVersion</td>

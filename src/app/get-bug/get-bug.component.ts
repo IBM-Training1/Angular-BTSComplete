@@ -14,7 +14,7 @@ export class GetBugComponent implements OnInit {
   bugArray: any;
   constructor(private bugService:BugService) { }
 
-  getBug(name:any)
+getBug(name:any)
 {
 this.bugService.getBug(name).subscribe(response=>
   {
@@ -34,7 +34,7 @@ getBugbyStatus(status:any)
 {
 this.bugService.getBugbyStatus(status).subscribe(response=>
   {
-    this.bugArray=[response];
+    this.bugArray=response;
     console.log(response);
     alert('bug shown....');
 
