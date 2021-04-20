@@ -123,10 +123,10 @@
 							</div>
 
 							<div class="form-group">
-								<label class="control-label col-sm-3 col-md-offset-2" for="pwd">Synopsis<span style="color:red">*</span></label>
+								<label class="control-label col-sm-3 col-md-offset-2" for="pwd">Synopsis<span style="color:red">*</span><span class="remaning" style="color:black">{{remainingText}}</span></label>
 								<div class="col-sm-9">
 									<textarea minlength="5" maxlength="50" class="form-control"
-                    placeholder="Please type your comment in less than 50 characters" id="synopsis"  [(ngModel)]='bug.synopsis' name="synopsis" required
+                    placeholder="Please type your comment in less than 50 characters" id="synopsis"  [(ngModel)]='bug.synopsis'(ngModelChange)="valueChange(bug.synopsis.length)" name="synopsis" required
                     rows="2"></textarea>
 								</div>
 							</div>
@@ -138,10 +138,10 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-sm-3 col-md-offset-4" for="pwd">Description<span style="color:red">*</span></label>
+								<label class="control-label col-sm-3 col-md-offset-4" for="pwd">Description<span style="color:red">*</span><span class="remaning" style="color:black">{{remainingText1}}</span></label>
 								<div class="col-sm-9">
 									<textarea minlength="5" maxlength="100" class="form-control"
-                    placeholder="Please type your comment in less than 100 characters" id="description" [(ngModel)]='bug.description' name="description" required
+                    placeholder="Please type your comment in less than 100 characters" id="description" [(ngModel)]='bug.description'(ngModelChange)="valueChange1(bug.description.length)" name="description" required
                     rows="2"></textarea>
 								</div>
 							</div>
