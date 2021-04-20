@@ -16,6 +16,10 @@ const appRoutes: Routes = [
   { path: '', component: HomeComponent }, //default, Home page
   { path: 'create', component: CreateBugComponent },
   { path: 'get', component: GetBugComponent },
+  { path: 'update', component: UpdateBugComponent },
+  { path: 'about', component: AboutUsComponent },
+  { path: 'help', component: ContactUsComponent },
+
 ];
 @NgModule({
   declarations: [

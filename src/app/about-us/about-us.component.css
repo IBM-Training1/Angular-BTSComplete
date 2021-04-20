@@ -1,0 +1,23 @@
+.para1
+{
+    font-size: 40px;
+    margin: 10px 0;
+    color : darkorange;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.para3,.para4{
+    font-size: 20px;
+    margin: 10px 40px ;
+    font-family:'Courier New', Courier, monospace;
+}
+#about-section {
+    padding: 10px;
+    text-align: center;
+    background-color: #474e5d;
+    color: white;
+  }
+  #about{
+    background-color: cornsilk;
+    height:600px;
+    width:auto
+  }

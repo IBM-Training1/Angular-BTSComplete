@@ -1,1 +1,173 @@
-<p>update-bug works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="update-bug.component.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+</head>
+
+<body>
+  <form id="createBug" class="jumbotron" style="padding-top: 34px">
+    <p class="para1">Update Bug</p>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label class="control-label col-sm-3  col-md-offset-4" for="Name">Bug
+              Id<span style="color: red">*</span>
+            </label>
+            <div class="col-sm-9">
+              <input [(ngModel)]='bug.id' type="text" class="form-control" id="bugId" name="bugId" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-3  col-md-offset-4" for="Name">Name<span
+                style="color:red">*</span></label>
+            <div class="col-sm-9">
+              <input [(ngModel)]='bug.name' type="text" class="form-control" id="name" name="name" required>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="control-label col-sm-3 col-md-offset-2" for="pwd">Product<span
+                style="color:red">*</span></label>
+            <div class="col-sm-9">
+              <input [(ngModel)]='bug.product' type="text" class="form-control" id="product" name="product" required>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="control-label col-sm-3 col-md-offset-4" for="pwd">Module<span
+                style="color:red">*</span></label>
+            <div class="col-sm-9">
+              <input [(ngModel)]='bug.module' type="text" class="form-control" id="module" name="module" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-10 col-md-offset-4" for="pwd">buildVersion <span
+                style="color:red">*</span></label>
+            <div class="col-sm-9">
+              <input [(ngModel)]='bug.buildVersion' type="text" class="form-control" id="submit" name="buildVersion">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-10  col-md-offset-4 " for="pwd">Estimated
+              Date<span style="color:red">*</span>
+            </label>
+            <div class="col-sm-9">
+              <input [(ngModel)]='bug.eta' id="etaid" name="eta" type="date" class="form-control" />
+            </div>
+          </div>
+
+        <!--   column break -->
+        </div>
+        <!--   column break -->
+
+        <div class="col">
+          <div class="form-group">
+            <label class="control-label col-sm-3 col-md-offset-2" for="pwd">Status <span
+                style="color:red">*</span></label>
+            <div class="col-sm-9">
+              <select [(ngModel)]='bug.status' name="status" class="form-control" id="Status">
+                <option value="" disabled selected>Choose value</option>
+                <option value="NEW">NEW</option>
+                <option value="ASSIGNED">ASSIGNED</option>
+                <option value="OPEN">OPEN</option>
+                <option value="FIXED">FIXED</option>
+                <option value="PENDING_REQUEST">PENDING_RETEST</option>
+                <option value="RETEST">RETEST</option>
+                <option value="REOPEN">REOPEN</option>
+                <option value="VERIFIED">VERIFIED</option>
+                <Option value="CLOSED">CLOSED</Option>
+                <option value="DEFERRED">DEFERRED</option>
+                <option value="DUPLICATE">DUPLICATE</option>
+                <option value="NEED_MORE_INFO">NEED_MORE_INFO</option>
+                <option value="WONT_FIX">WONT_FIX</option>
+                <option value="REJECTED">REJECTED</option>
+                <option value="NOT_A_BUG">NOT_A_BUG</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-3  col-md-offset-4 " for="pwd">Type <span
+                style="color:red">*</span></label>
+            <div class="col-sm-9">
+              <select [(ngModel)]='bug.type' name="type" class="form-control" id="type" required>
+                <option value="" disabled selected>Choose value</option>
+                <option value="RUNTIME">RUNTIME</option>
+                <option value="COMPILETIME">COMPILETIME</option>
+                <option value="ARITHMETIC">ARITHMETIC</option>
+                <option value="LOGICAL">LOGICAL</option>
+                <option value="SYNTAX">SYNTAX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-3  col-md-offset-4" for="pwd">Priority <span
+                style="color:red">*</span></label>
+            <div class="col-sm-9">
+              <select [(ngModel)]='bug.priority' name="priority" class="form-control" id="Priority">
+                <option value="" disabled selected>Choose value</option>
+                <option value="LOW">LOW</option>
+                <option value="MEDIUM">MEDIUM</option>
+                <option value="HIGH">HIGH</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="form-group">
+              <label class="control-label col-sm-3 col-md-offset-2" for="pwd">Severity <span
+                  style="color:red">*</span></label>
+              <div class="col-sm-9">
+                <select [(ngModel)]='bug.severity' name="severity" class="form-control" id="severity">
+                  <option value="" disabled selected>Choose value</option>
+                  <option value="LOW">LOW</option>
+                  <option value="MILD">MILD</option>
+                  <option value="SEVERE">SEVERE</option>
+                </select>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label class="control-label col-sm-3 col-md-offset-2" for="pwd">Synopsis<span
+                  style="color:red">*</span></label>
+              <div class="col-sm-9">
+                <textarea [(ngModel)]='bug.synopsis' minlength="5" maxlength="50" class="form-control"
+                  placeholder="Please type your comment in less than 50 characters" id="synopsis" name="synopsis"
+                  required rows="2"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label col-sm-3 col-md-offset-4" for="pwd">Description<span
+                  style="color:red">*</span></label>
+              <div class="col-sm-9">
+                <textarea [(ngModel)]='bug.description' minlength="5" maxlength="100" class="form-control"
+                  placeholder="Please type your comment in less than 100 characters" id="description" name="description"
+                  required rows="2"></textarea>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <button (click)="updateBug(bug.id)" type="Submit" class="btn btn-first">Update Bug</button>
+  </form>
+</body>
+
+</html>
