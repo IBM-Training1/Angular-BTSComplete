@@ -14,92 +14,79 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <title>Search Bug</title>
+
 </head>
 
 <body>
-	<header>
-    <nav class="navbar navbar-expand-md  bg-dark navbar-dark">
-      <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse"
-          data-target="#menu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a href=""><img class="logo" src="assets/img/logo.png"></a>
+  <div id="background"  class="jumbotron" style="padding-top: 20px;padding-left: 60px">
+    <p class="para1"  >Get Bug</p>
+    <form id="getBug">
+      <div class="form-group row">
+
+        <div class="col-sm-6">
+          BugName:<span style="color:red">*</span>
+          <input id="bugName" placeholder="" [(ngModel)]='bug.name' name="name" required>
+          <button class="button" (click)='getBug(bug.name)'>Search</button>
+        </div>
+
+        <div class="col-sm-6">
+          BugStatus:<span style="color:red">*</span>
+          <select id="Status" [(ngModel)]='bug.status' name="status"  required>
+            <option value="NEW" selected>NEW</option>
+            <option value='ASSIGNED'>ASSIGNED</option>
+            <option value='OPEN'>OPEN</option>
+            <option value='FIXED'>FIXED</option>
+            <option value='PENDING_REQUEST'>PENDING_REQUEST</option>
+            <option value='RETEST'>RETEST</option>
+            <option value='REOPEN'>REOPEN</option>
+            <option value='VERIFIED'>VERIFIED</option>
+            <option value='CLOSED'>CLOSED</option>
+            <option value='REJECTED'>REJECTED</option>
+            <option value='DUPLICATED'>DUPLICATE</option>
+            <option value='DEFERRED'>DEFERRED</option>
+            <option value='NOT_A_BUG'>NOT_A_BUG</option>
+          </select>
+
+          <button class="button" (click)='getBugbyStatus(bug.status)'>Search</button>
+
+        </div>
+
       </div>
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item" ><a class="nav-link" href="contatUs.html">Help</a></li>
-          <li class="nav-item"><a class="nav-link" href="aboutUs.html">AboutUs</a></li>
-
-        </ul>
-      </div>
-
-    </nav>
-  </header>
-
-	<div id="background"  class="jumbotron" style="padding-top: 24px">
-	<p class="para1"  style="padding-left: 24px">Get Bug</p>
-			<form id="getBug">
-        <div class="center" id="box">
-				<table class="table">
-					<tr>
-						<td>BugName:<span style="color:red">*</span></td>
-						<td><input id="bugName" placeholder="" [(ngModel)]='bug.name' name="name" required></td>
-					</tr>
-        </table>
-        <button class="button" (click)='getBug(bug.name)'>Search</button>
-
-      </div>
-
-		    <div class="table-responsive">
-          <table class=" table table-bordered "
-				     style="border: 2px solid #000000; margin-top: 50px ">
-				      <thead style="background-color:grey; color:white">
-					       <td scope="col" style="border: 2px solid #000000;">Name</td>
-                 <td scope="col" style="border: 2px solid #000000;">Status <input id="Status"
-                  placeholder="" [(ngModel)]='bug.status' name="status" required>
-                  <button (click)='getBugbyStatus(bug.status)'>Search</button></td>
-					      <td scope="col" style="border: 2px solid #000000;">Priority</td>
-					<td scope="col" style="border: 2px solid #000000;">Type</td>
-					<td scope="col" style="border: 2px solid #000000;">BuildVersion</td>
-					<td scope="col" style="border: 2px solid #000000;">Synopsis</td>
-					<td scope="col" style="border: 2px solid #000000;">Severity</td>
-					<td scope="col" style="border: 2px solid #000000;">ProjectId</td>
-					<td scope="col" style="border: 2px solid #000000;">Module</td>
-					<td scope="col" style="border: 2px solid #000000;">Product</td>
-					<td scope="col" style="border: 2px solid #000000;">Estimated Date</td>
+      <div class="table-responsive">
+        <table class=" table table-bordered "
+				style="border: 2px solid #000000; margin-top: 20px;width:100%">
+				<thead style="background-color:grey; color:white">
+					<td scope="col" style="border: 2px solid #000000;"><b>Name</b></td>
+					<td scope="col" style="border: 2px solid #000000;"><b>Status</b> </td>
+					<td scope="col" style="border: 2px solid #000000;"><b>Priority</b></td>
+					<td scope="col" style="border: 2px solid #000000;"><b>Type</b></td>
+					<td scope="col" style="border: 2px solid #000000;"><b>ProjectId</b></td>
+					<td scope="col" style="border: 2px solid #000000;"><b>Product</b></td>
+					<td scope="col" style="border: 2px solid #000000;"><b>Estimated Date</b></td>
 				</thead>
-				<tbody id='bugsTable' style="border: 2px solid #000000;"><tr *ngFor='let bug of bugArray; index as i'>
-          <td><a [href]='bug.name'>{{bug.name}}</a></td>
-          <td>{{bug.status}}</td>
-          <td>{{bug.priority}}</td>
-          <td>{{bug.type}}</td>
-          <td>{{bug.buildVersion}}</td>
-          <td>{{bug.synopsis}}</td>
-          <td>{{bug.severity}}</td>
-          <td>{{bug.projectId}}</td>
-          <td>{{bug.module}}</td>
-          <td>{{bug.product}}</td>
-          <td>{{bug.eta}}</td>
+        <tbody id='bugsTable' style="border: 2px solid #000000;width:100%;background-color: rgb(236, 233, 233)">
+
+          <tr *ngFor='let bug1 of bugArray; index as i'>
+              <td>{{bug1.name}}</td>
+              <td >{{bug1.status}}</td>
+              <td>{{bug1.priority}}</td>
+              <td>{{bug1.type}}</td>
+              <td>{{bug1.projectId}}</td>
+              <td>{{bug1.product}}</td>
+              <td>{{bug1.eta |date:'M/d/yy'}}</td>
+
+
+            </tr>
+
           </tbody>
-			  </table>
-		    </div>
-         <br> <br>
-        </form>
-         <br>
-
-</div>
+        </table>
+      </div>
+      <br> <br>
+		</form>
+  </div>
+		<br>
 		<div>
-		<footer class="page-footer font-small blue">
 
-			<div class="col-lg-12 col-md-12 text-center">
-				<div class="footer-copyright text-center py-3">
-					© 2021 Copyright: <a href="http://localhost:8081/index.html">ServerMonks</a>
-				</div>
-			</div>
-		</footer>
 	</div>
-</body>
 
-</html>
+</body>
