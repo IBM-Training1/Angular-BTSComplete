@@ -14,17 +14,17 @@ export class UpdateBugComponent implements OnInit {
   constructor(private bugService:BugService) { }
   updateBug()
 {const promise = this.bugService.updateBug(this.bug,this.bug.id);
+
   promise.subscribe((response: any)=> {
     console.log(response);
-    alert('Bug added..')
+    alert('Bug updated..')
 
   },
-    (  error: { ok: any; })=> {
+  error=> {
     console.log(error);
-    if(!error.ok)
-
-    alert('error Happened')
+    alert('error happenned..')
   })
+
 
 }
 

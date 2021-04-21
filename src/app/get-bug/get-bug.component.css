@@ -36,3 +36,7 @@ background-color: #09e639;
 .table td{
   border:1px solid black;
 }
+.refresh{
+  padding: 5px;
+  margin-left: 175px;
+}
