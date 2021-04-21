@@ -7,7 +7,7 @@ import { BugService } from '../bug.service';
   templateUrl: './update-bug.component.html',
   styleUrls: ['./update-bug.component.css']
 })
-export class UpdateBugComponent implements OnInit {
+export class UpdateBugComponent implements OnInit { //controller
   title:string = 'updateBug';
   bug:Bug=new Bug(); //model -stores all form data
   bugArray:Bug[]=[];
