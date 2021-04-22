@@ -43,4 +43,7 @@ export class BugService {
 
     });
   }
+  delete(bugid:number  ){
+    return this.http.delete(URL+bugid);
+  }
 }

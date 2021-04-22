@@ -63,7 +63,8 @@
 					<td scope="col" style="border: 2px solid #000000;"><b>Type</b></td>
 					<td scope="col" style="border: 2px solid #000000;"><b>ProjectId</b></td>
 					<td scope="col" style="border: 2px solid #000000;"><b>Product</b></td>
-					<td scope="col" style="border: 2px solid #000000;"><b>Estimated Date</b></td>
+          <td scope="col" style="border: 2px solid #000000;"><b>Estimated Date</b></td>
+          <td scope="col" style="border: 2px solid #000000;"><b>Delete</b></td>
 				</thead>
         <tbody id='bugsTable' style="border: 2px solid #000000;width:100%;background-color: rgb(236, 233, 233)">
 
@@ -75,6 +76,8 @@
               <td>{{bug1.projectId}}</td>
               <td>{{bug1.product}}</td>
               <td>{{bug1.eta |date:'M/d/yy'}}</td>
+              <td><button style="background-color: red; color: white; width: 30px;" (click)='this.deleteBug(bug1.id, i)'>X</button></td>
+
 
 
             </tr>
