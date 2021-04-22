@@ -12,8 +12,20 @@
 </head>
 
 <body>
-  <form id="createBug" class="jumbotron" style="padding-top: 34px">
-    <p class="para1">Update Bug</p>
+  <form id="updateBug" class="jumbotron" style="padding-top: 34px;color: grey;
+    font-size: 20px;
+    background-color: cornsilk;
+    width: auto;
+    height: auto;">
+		<p class="para1">Update Bug</p>
+		<div class="form-group row searchForm">
+
+			<label for="bugName" class="col-sm-2 bugLabel">Bug Name<span>*</span></label>
+			<input class="form-control col-sm-6" [(ngModel)]='name'  style="margin-right:50px"  name='bugName' id='bugName'>
+
+		<button type="button" id="searchBug" class="btn btn-primary col-sm-3 searchButton" (click)="getBug()">Get Bug</button>
+	</div>
+    <p class="para1">Details</p>
     <div class="container">
       <div class="row">
         <div class="col">

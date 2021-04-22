@@ -9,8 +9,11 @@ import { BugService } from '../bug.service';
 })
 export class UpdateBugComponent implements OnInit { //controller
   title:string = 'updateBug';
+
   bug:Bug=new Bug(); //model -stores all form data
-  bugArray:Bug[]=[];
+  bugArray:any;
+  bugResult:any;
+  name:String="";
   constructor(private bugService:BugService) { }
   updateBug()
 {const promise = this.bugService.updateBug(this.bug,this.bug.id);
@@ -26,6 +29,27 @@ export class UpdateBugComponent implements OnInit { //controller
   })
 
 
+}
+
+getBug() {
+  const bugName = this.name.trim();
+  if (bugName) {
+    const promise = this.bugService.getBug(bugName);
+    promise.subscribe(response => {
+      this.bugResult = response;
+      console.log(this.bugResult);
+      if(this.bugResult){
+          this.bug=this.bugResult;
+        }
+      else{
+        alert("Bug Name not in records");
+      }
+    },
+      error => {
+        console.log(error);
+        alert('error happened..')
+      })
+  }
 }
 
   ngOnInit(): void {
