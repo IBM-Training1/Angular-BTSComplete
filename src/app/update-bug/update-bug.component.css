@@ -32,3 +32,15 @@
 .btn-first:hover {
   background-color: yellow;
 }
+.button{
+  border-radius: 20px;
+  background-color: darkorange;
+  color: black;
+
+  padding: 5px;
+  color: black;
+  font-size: 20px;
+  border-collapse: collapse;
+}
+
+

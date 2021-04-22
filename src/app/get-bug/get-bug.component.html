@@ -24,13 +24,13 @@
       <div class="form-group row">
 
         <div class="col-sm-6">
-          BugName:<span style="color:red">*</span>
+          BugName:
           <input id="bugName" placeholder="" [(ngModel)]='bug.name' name="name" required>
           <button class="button" (click)='getBug(bug.name)'>Search</button>
         </div>
 
         <div class="col-sm-6">
-          BugStatus:<span style="color:red">*</span>
+          BugStatus:
           <select id="Status" [(ngModel)]='bug.status' name="status"  required>
             <option value="NEW" selected>NEW</option>
             <option value='ASSIGNED'>ASSIGNED</option>
