@@ -42,8 +42,17 @@ getBug(name:any)
 
 }
 deleteBug(id:number, index:number){
+  var txt;
+  var r = confirm("Press OK to delete the bug " + name);
+  if (r == true) {
   const observable = this.bugService.delete(id);
-  observable.subscribe(response=> this.bugArray.splice(index,1))
+  observable.subscribe(response=> this.bugArray.splice(index,1));
+  alert("Bug Deleted Successfully");
+}
+else{
+
+    alert('Bug not deleted..');
+  }
 }
 getBugbyStatus(status:any)
 {
