@@ -5,10 +5,10 @@ import { SEVERITY } from './SEVERITY';
 
 export class Bug{
   id:string='';
-  priority:PRIORITY=PRIORITY.LOW;
-  type:TYPE=TYPE.RUNTIME;
+  priority:string='LOW';
+  type:string='RUNTIME';
   status:string='NEW';
-  severity:SEVERITY=SEVERITY.LOW;
+  severity:string='LOW';
   buildVersion:string='';
   name:string='';
   projectId:string='';
