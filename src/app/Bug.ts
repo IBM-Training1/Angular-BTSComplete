@@ -7,7 +7,7 @@ export class Bug{
   id:string='';
   priority:PRIORITY=PRIORITY.LOW;
   type:TYPE=TYPE.RUNTIME;
-  status:STATUS=STATUS.NEW;
+  status:string='NEW';
   severity:SEVERITY=SEVERITY.LOW;
   buildVersion:string='';
   name:string='';
