@@ -19,7 +19,7 @@ export class BugService {
   }
 //service for get bug by name
   getBugbyName(name:any){
-    return this.http.get(URL+'name/'+ name, {
+    return this.http.get(URL+'/'+ name, {
       headers: {
         "content-type": 'application/json',
         reponseType: 'text'

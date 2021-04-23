@@ -165,7 +165,7 @@
 
             <div class="form-group">
               <label class="control-label col-sm-20 col-md-offset-15" for="pwd">Synopsis<span
-                  style="color:red">*</span><span >{{50-bug.synopsis.length}} characters left</span></label>
+                  style="color:red">*</span></label>
               <div class="col-sm-9">
                 <textarea [(ngModel)]='bug.synopsis' minlength="5" maxlength="50" class="form-control"
                   placeholder="Please type your comment in less than 50 characters" id="synopsis" name="synopsis"
@@ -175,7 +175,7 @@
 
             <div class="form-group">
               <label class="control-label col-sm-20 col-md-offset-15" for="pwd">Description<span
-                  style="color:red">*</span><span >{{100-bug.description.length}} characters left</span></label>
+                  style="color:red">*</span></label>
               <div class="col-sm-9">
                 <textarea [(ngModel)]='bug.description' minlength="5" maxlength="100" class="form-control"
                   placeholder="Please type your comment in less than 100 characters" id="description" name="description"

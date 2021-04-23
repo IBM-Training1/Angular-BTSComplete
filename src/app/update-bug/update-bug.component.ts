@@ -11,9 +11,9 @@ export class UpdateBugComponent implements OnInit { //controller
   title:string = 'updateBug';
 
   bug:Bug=new Bug(); //model -stores all form data
-  bugArray:any;
+  bugArray:Bug[]=[];
   bugResult:any;
-  name:String="";
+  name:string="";
   constructor(private bugService:BugService) { }
   updateBug()
 {const promise = this.bugService.updateBug(this.bug,this.bug.id);
@@ -39,8 +39,10 @@ getBugbyName() {
       this.bugResult = response;
       console.log(this.bugResult);
       if(this.bugResult){
-          this.bug=this.bugResult;
-        }
+        this.bugResult.forEach((bug: Bug) => {
+          this.bug=bug;
+        });
+      }
       else{
         alert("Bug Name not in records");
       }

@@ -24,7 +24,7 @@ getBugbyName(name:any)
     if(bugName!=null){
       const promise = this.bugService.getBugbyName(bugName);
     promise.subscribe(response => {
-      this.bugResult = [response];
+      this.bugResult = response;
       if (this.bugResult!=0) {
         this.bugArray = this.bugResult;
         console.log(response);
