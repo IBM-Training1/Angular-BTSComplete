@@ -123,25 +123,25 @@
 							</div>
 
 							<div class="form-group">
-								<label class="control-label col-sm-3 col-md-offset-2" for="pwd">Synopsis<span style="color:red">*</span><span class="remaning" style="color:black">{{remainingText}}</span></label>
+								<label class="control-label col-sm-15 col-md-offset-15" for="pwd">Synopsis<span style="color:red">*</span><span >{{50-bug.synopsis.length}} characters left</span></label>
 								<div class="col-sm-9">
 									<textarea minlength="5" maxlength="50" class="form-control"
-                    placeholder="Please type your comment in less than 50 characters" id="synopsis"  [(ngModel)]='bug.synopsis'(ngModelChange)="valueChange(bug.synopsis.length)" name="synopsis" required
+                    placeholder="Please type your comment in less than 50 characters" id="synopsis"  [(ngModel)]='bug.synopsis' name="synopsis" required
                     rows="2"></textarea>
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-sm-3 col-md-offset-2" for="pwd">Product<span style="color:red">*</span></label>
+								<label class="control-label col-sm-15 col-md-offset-15" for="pwd">Product<span style="color:red">*</span></label>
 								<div class="col-sm-9">
 									<input type="text" class="form-control" id="product" [(ngModel)]='bug.product'
 										 name="product" required>
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-sm-3 col-md-offset-4" for="pwd">Description<span style="color:red">*</span><span class="remaning" style="color:black">{{remainingText1}}</span></label>
+								<label class="control-label col-sm-15 col-md-offset-15" for="pwd">Description<span style="color:red">*</span><span >{{100-bug.description.length}} characters left</span></label>
 								<div class="col-sm-9">
 									<textarea minlength="5" maxlength="100" class="form-control"
-                    placeholder="Please type your comment in less than 100 characters" id="description" [(ngModel)]='bug.description'(ngModelChange)="valueChange1(bug.description.length)" name="description" required
+                    placeholder="Please type your comment in less than 100 characters" id="description" [(ngModel)]='bug.description' name="description" required
                     rows="2"></textarea>
 								</div>
 							</div>
